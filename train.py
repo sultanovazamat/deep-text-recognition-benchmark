@@ -292,7 +292,7 @@ if __name__ == '__main__':
     #     # opt.character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     #     opt.character = string.printable[:-6]  # same with ASTER setting (use 94 char).
 
-    opt.character = ".0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZЁІЊЌЎАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
+    opt.character = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
 
     """ Seed and GPU setting """
     # print("Random Seed: ", opt.manualSeed)
@@ -304,7 +304,6 @@ if __name__ == '__main__':
     cudnn.benchmark = True
     cudnn.deterministic = True
     opt.num_gpu = torch.cuda.device_count()
-    # print('device count', opt.num_gpu)
     if opt.num_gpu > 1:
         print('------ Use multi-GPU setting ------')
         print('if you stuck too long time with multi-GPU setting, try to set --workers 0')
