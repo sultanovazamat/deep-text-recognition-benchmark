@@ -292,7 +292,7 @@ if __name__ == '__main__':
     #     # opt.character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     #     opt.character = string.printable[:-6]  # same with ASTER setting (use 94 char).
 
-    opt.character = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
+    opt.character = ".-/0123456789abcdefghijklmnopqrstuvwxyzёабвгдежзийклмнопрстуфхцчшщъыьэюяғқҳҷӣӯABCDEFGHIJKLMNOPQRSTUVWXYZЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
 
     """ Seed and GPU setting """
     # print("Random Seed: ", opt.manualSeed)
