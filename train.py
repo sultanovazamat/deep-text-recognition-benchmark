@@ -294,6 +294,7 @@ if __name__ == '__main__':
     #     opt.character = string.printable[:-6]  # same with ASTER setting (use 94 char).
 
     opt.character = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
+    opt.save_to = "/content/drive/MyDrive/OCR"
 
     """ Seed and GPU setting """
     # print("Random Seed: ", opt.manualSeed)
