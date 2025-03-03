@@ -81,7 +81,11 @@ def train(opt):
     if opt.saved_model != '':
         print(f'loading pretrained model from {opt.saved_model}')
         if opt.FT:
-            model.load_state_dict(torch.load(opt.saved_model), strict=False)
+            checkpoint = torch.load(opt.saved_model)
+            checkpoint = {k: v for k, v in checkpoint.items() if (k in model.state_dict().keys()) and (model.state_dict()[k].shape == checkpoint[k].shape)}
+            for name in model.state_dict().keys() :
+                if name in checkpoint.keys() :
+                    model.state_dict()[name].copy_(checkpoint[name])
         else:
             model.load_state_dict(torch.load(opt.saved_model))
     print("Model:")
@@ -284,9 +288,11 @@ if __name__ == '__main__':
     os.makedirs(f'./saved_models/{opt.exp_name}', exist_ok=True)
 
     """ vocab / character number configuration """
-    if opt.sensitive:
-        # opt.character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        opt.character = string.printable[:-6]  # same with ASTER setting (use 94 char).
+    # if opt.sensitive:
+    #     # opt.character += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    #     opt.character = string.printable[:-6]  # same with ASTER setting (use 94 char).
+
+    opt.character = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZЁЎАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ"
 
     """ Seed and GPU setting """
     # print("Random Seed: ", opt.manualSeed)
