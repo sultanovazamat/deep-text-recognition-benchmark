@@ -94,7 +94,7 @@ class Batch_Balanced_Dataset(object):
                 balanced_batch_texts += text
             except ValueError:
                 pass
-
+        print(balanced_batch_texts)
         balanced_batch_images = torch.cat(balanced_batch_images, 0)
 
         return balanced_batch_images, balanced_batch_texts
