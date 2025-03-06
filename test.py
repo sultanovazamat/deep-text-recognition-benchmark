@@ -148,7 +148,7 @@ def validation(model, criterion, evaluation_loader, converter, opt):
             if opt.sensitive and opt.data_filtering_off:
                 pred = pred.lower()
                 gt = gt.lower()
-                alphanumeric_case_insensitve = '0123456789abcdefghijklmnopqrstuvwxyz'
+                alphanumeric_case_insensitve = 'ЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ'
                 out_of_alphanumeric_case_insensitve = f'[^{alphanumeric_case_insensitve}]'
                 pred = re.sub(out_of_alphanumeric_case_insensitve, '', pred)
                 gt = re.sub(out_of_alphanumeric_case_insensitve, '', gt)
