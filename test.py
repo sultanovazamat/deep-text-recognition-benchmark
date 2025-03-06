@@ -148,8 +148,8 @@ def validation(model, criterion, evaluation_loader, converter, opt):
 
             # To evaluate 'case sensitive model' with alphanumeric and case insensitve setting.
             if opt.sensitive and opt.data_filtering_off:
-                pred = pred.lower()
-                gt = gt.lower()
+                # pred = pred.lower()
+                # gt = gt.lower()
                 alphanumeric_case_insensitve = 'ЁАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯҒҚҲҶӢӮ'
                 out_of_alphanumeric_case_insensitve = f'[^{alphanumeric_case_insensitve}]'
                 pred = re.sub(out_of_alphanumeric_case_insensitve, '', pred)
